@@ -1,0 +1,39 @@
+﻿<Window x:Class="ImageG.UserDate"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ImageG"
+        mc:Ignorable="d"
+        Title="UserDate" Height="300" Width="500" Background="AliceBlue">
+    <Window.DataContext>
+        <local:UserviewModel x:Name="Userdata"></local:UserviewModel>
+    </Window.DataContext>
+    <StackPanel>
+        <Label Content="Please Input your date " HorizontalAlignment="Center" x:Name="Theme"/>
+        <Grid Height="30" Margin="10 10 10 10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="6*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" HorizontalAlignment="Center" Content="Date : " x:Name="Input"/>
+            <TextBox x:Name="Date" Grid.Column="1"/>
+        </Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="1.5*"/>
+            </Grid.RowDefinitions>
+            <Button Grid.Column="0" Grid.Row="0" Content="Commit" Click="Commit" HorizontalAlignment="Center"/>
+            <Button Grid.Column="1" Grid.Row="0" Content="Cancel" HorizontalAlignment="Center" />
+            <Label Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Content="convolution select :Mean 3,5,7.... ||  GS 273  ||  sharpen 1 or -1 " />
+            <Label Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Content="Dark select : 0-1" />
+        </Grid>
+    </StackPanel>
+</Window>
